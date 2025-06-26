@@ -1,3 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, arial;
+}
+
+body {
+    background-color: rgb(66, 66, 66);
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+header {
+    background-color: #01730c;
+    padding: 3rem;
+    margin: .5rem;
+    text-align: center;
+}
+
 h1 {
-    color:red;
+    padding-bottom: 3rem;
+}
+
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 70%;
+    padding: .6rem;
+    font-size: 1rem;
+    outline: none;
+    background-color: black;
+    color: white;
+}
+
+button {
+    padding: .6rem;
+    width: 25%;
+    background-color: black;
+    color: grey;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    transition: all .3s ease-in-out;
+
+}
+
+button:hover {
+    background-color: greenyellow;
+    color: black;
 }

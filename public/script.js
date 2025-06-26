@@ -1,1 +1,0 @@
-window.alert("Bem-vindo ao To Do List!");
