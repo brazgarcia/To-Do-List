@@ -80,6 +80,7 @@ ul li a {
     text-decoration: none;
     color: white;
     font-size: 1.3rem;
+    padding-left: 2rem;
 }
 
 ul li span {
@@ -194,7 +195,7 @@ div#btns {
 div#btns a {
     text-decoration: none;
     padding: .5rem;
-    widht: 7rem;
+    width: 7rem;
     text-align: center;
     background-color: rgb(36, 36, 36);
     font-size: 1.5rem;
@@ -257,4 +258,33 @@ span#close-Message {
 
 span#close-message:hover {
     color: rgb(255, 0, 0);
+}
+
+ul li.check-true {
+    background-color: #888888;
+    color: white;
+    text-decoration: line-through;
+}
+
+ul li a.check-true::before {
+    content: "";
+    position: absolute;
+    border: white solid;
+    top: 17px;
+    left: 16px;
+    height: 15px;
+    width: 7px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+ul li a.check-false::before {
+    content: "";
+    position: absolute;
+    border: white solid;
+    top: 20px;
+    left: 16px;
+    height: 13px;
+    width: 13px;
+    border-width: 2px;
 }

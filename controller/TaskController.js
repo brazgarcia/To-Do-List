@@ -12,7 +12,7 @@ const getAllTasks = async (req, res) => {
     const tasksList = await Task.find();
     return res.render("index", { tasksList, task: null, taskDelete: null, message, type});
   } catch (err) {
-    res.status(500).send({ error: err.menssage });
+    res.status(500).send({ error: err.message });
   }
 };
 
@@ -31,7 +31,7 @@ const createTask = async (req, res) => {
     type = "success"
     return res.redirect("/");
   } catch (err) {
-    res.status(500).send({ error: err.menssage });
+    res.status(500).send({ error: err.message });
   }
 };
 
@@ -46,7 +46,7 @@ const getById = async (req, res) => {
       res.render("index", { task: null, taskDelete, tasksList, message, type });
     }
   } catch (err) {
-    res.status(500).send({ error: err.menssage });
+    res.status(500).send({ error: err.message });
   }
 };
 
@@ -58,7 +58,7 @@ const updateOneTask = async (req, res) => {
     type = "success";
     res.redirect("/");
   } catch (err) {
-    res.status(500).send({ error: err.menssage });
+    res.status(500).send({ error: err.message });
   }
 };
 
@@ -69,7 +69,18 @@ const deleteOneTask = async (req, res) => {
     type = "success";
     res.redirect("/");
   } catch (err) {
-    res.status(500).send({ error: err.menssage });
+    res.status(500).send({ error: err.message });
+  }
+};
+
+const taskCheck = async (req, res) => {
+  try {
+    const task = await Task.findOne({ _id: req.params.id});
+    task.check ? task.check = false : task.check = true; // Condicional ternária.
+    await Task.updateOne({ _id: req.params.id}, task);
+    res.redirect("/");
+  } catch (err) {
+    res.status(500).send({ error: err.message});
   }
 };
 
@@ -79,4 +90,5 @@ module.exports = {
   getById,
   updateOneTask,
   deleteOneTask,
+  taskCheck,
 };
