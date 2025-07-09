@@ -270,7 +270,7 @@ ul li a.check-true::before {
     content: "";
     position: absolute;
     border: white solid;
-    top: 17px;
+    top: 21px;
     left: 16px;
     height: 15px;
     width: 7px;
@@ -282,7 +282,7 @@ ul li a.check-false::before {
     content: "";
     position: absolute;
     border: white solid;
-    top: 20px;
+    top: 25px;
     left: 16px;
     height: 13px;
     width: 13px;
