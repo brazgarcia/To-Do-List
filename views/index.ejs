@@ -26,13 +26,7 @@
             <%- include('./components/form', {titleForm: "TO DO LIST", action: "create", value: "", idBtn: "addButton", nameBtn: "Adicionar"})%>
         <% } else { %>
 
-            <h1>Editar tarefa</h1>
-
-            <form action="/updateOne/<%= task._id %>" method="post">
-                <input type="text" name="task" id="task" value="<%= task.task %>">
-                <button id="updateButton" type="submit">Atualizar</button>
-            </form>
-
+            <%- include('./components/form', {titleForm: "Editar tarefa", action: `updateOne/${task._id}`, value: task.task, idBtn: "updateButton", nameBtn: "Atualizar"}) %>
         <% } %>
 
     </header>
